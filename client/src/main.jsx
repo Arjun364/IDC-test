@@ -6,14 +6,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './routes/AuthContext.jsx'
 // routes
 import PublicRoute from './routes/PublicRoute.jsx'
-import AdminRoute from './routes/AdminRoute.jsx'
 import PrivateRoute from './routes/PrivateRoute.jsx'
 import RestrictedRoute from './routes/RestrictedRoute.jsx'
 // pages
 import LandingPage from './pages/LandingPage.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import HomePage from './pages/HomePage.jsx'
-import Dashboard from './pages/Admin/Dashboard.jsx'
 import Authentication from './pages/Authentication.jsx'
 import { UserProvider } from "./Usercontext.jsx";
 
