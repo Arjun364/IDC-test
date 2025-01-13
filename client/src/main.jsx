@@ -15,6 +15,8 @@ import ErrorPage from './pages/ErrorPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import Dashboard from './pages/Admin/Dashboard.jsx'
 import Authentication from './pages/Authentication.jsx'
+import { UserProvider } from "./Usercontext.jsx";
+
 
 // routes
 const router = createBrowserRouter([
@@ -28,21 +30,15 @@ const router = createBrowserRouter([
     ]
   },
   {
-    element: <AdminRoute />,
+    element: <PrivateRoute />,
     children: [
-      { path: '/admin', element: <Dashboard /> }
+      { path: '/home', element: <HomePage /> }
     ]
   },
   {
-    element: <PrivateRoute/>,
-    children:[
-      {path:'/home',element:<HomePage/>}
-    ]
-  },
-  {
-    element:<RestrictedRoute/>,
-    children:[
-      {path:'/login',element:<Authentication signin={true} />}
+    element: <RestrictedRoute />,
+    children: [
+      { path: '/login', element: <Authentication signin={true} /> }
     ]
   }
 ])
@@ -51,7 +47,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
     </AuthProvider>
   </StrictMode>,
 )

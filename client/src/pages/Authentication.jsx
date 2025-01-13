@@ -4,7 +4,7 @@ import Registration from '../components/Auth/Registration'
 
 const Authentication = ({signin}) => {
   return (
-    <div className='w-full min-h-[100vh] flex items-center justify-center'>
+    <div className='w-full min-h-[100vh] flex items-center justify-center bg-slate-200 dark:bg-black'>
           {signin?<Login/>:<Registration/>}
     </div>
 )
